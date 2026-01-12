@@ -1,0 +1,9 @@
+name = "ai-agent-studio"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "ai-agent-studio"
+
+[env.preview]
+name = "ai-agent-studio-preview"
