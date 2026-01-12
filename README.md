@@ -38,7 +38,7 @@ npm run cf:build
 
 This will:
 1. Build your Next.js application
-2. Adapt it for Cloudflare Workers/Pages
+2. Adapt it for Cloudflare Pages
 
 #### Preview Locally
 
@@ -46,25 +46,29 @@ This will:
 npm run cf:preview
 ```
 
-This starts a local Wrangler dev server to preview your Cloudflare-optimized build.
+This starts a local Wrangler Pages dev server to preview your Cloudflare-optimized build.
 
 #### Deploy to Cloudflare
 
+**Option A: Using CLI**
 ```bash
 npm run cf:deploy
 ```
 
-This will deploy your application to Cloudflare Pages.
-
-#### Manual Deployment via Cloudflare Dashboard
+**Option B: Using Cloudflare Dashboard (Recommended)**
 
 1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
-2. Navigate to Workers & Pages
-3. Create a new Pages project
-4. Connect your Git repository
-5. Set build command: `npm run cf:build`
-6. Set output directory: `.open-next/cloudflare`
-7. Deploy!
+2. Navigate to **Workers & Pages**
+3. Click **Create a project** → **Pages** → **Connect to Git**
+4. Select your repository
+5. Configure build settings:
+   - **Framework preset**: None (or Next.js if available)
+   - **Build command**: `npm run cf:build`
+   - **Build output directory**: `.open-next/cloudflare`
+   - **Root directory**: `/` (leave empty or use `/`)
+6. Click **Save and Deploy**
+
+**Important**: Do NOT use `cf:preview` as your build command in Cloudflare Pages. Use `cf:build` only.
 
 ## Project Structure
 

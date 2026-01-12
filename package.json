@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "cf:build": "next build && npx opennextjs-cloudflare build",
-    "cf:preview": "npm run cf:build && npx wrangler dev",
-    "cf:deploy": "npm run cf:build && npx opennextjs-cloudflare deploy"
+    "cf:preview": "npm run cf:build && npx wrangler pages dev .open-next/cloudflare",
+    "cf:deploy": "npm run cf:build && npx wrangler pages deploy .open-next/cloudflare"
   },
   "dependencies": {
     "next": "16.1.1",

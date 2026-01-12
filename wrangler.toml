@@ -2,8 +2,6 @@ name = "ai-agent-studio"
 compatibility_date = "2024-01-15"
 compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-name = "ai-agent-studio"
-
-[env.preview]
-name = "ai-agent-studio-preview"
+# For Cloudflare Pages, the build output directory is configured in the dashboard
+# Build command: npm run cf:build
+# Output directory: .open-next/cloudflare
