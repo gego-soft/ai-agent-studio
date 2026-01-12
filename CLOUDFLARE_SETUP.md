@@ -39,7 +39,10 @@ When setting up your Cloudflare Pages project, use these settings:
    Build command: npm run cf:build
    Build output directory: .open-next/cloudflare
    Root directory: / (or leave empty)
+   Project name: ai-agent-studio (or your preferred name)
    ```
+
+   **Note**: The `wrangler.toml` file now includes `pages_build_output_dir` which Cloudflare Pages will automatically detect.
 
 4. **Environment Variables** (if needed)
    - Go to Settings → Environment Variables

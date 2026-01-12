@@ -9,7 +9,7 @@
     "lint": "eslint",
     "cf:build": "next build && npx opennextjs-cloudflare build",
     "cf:preview": "npm run cf:build && npx wrangler pages dev .open-next/cloudflare",
-    "cf:deploy": "npm run cf:build && npx wrangler pages deploy .open-next/cloudflare"
+    "cf:deploy": "npm run cf:build && npx wrangler pages deploy .open-next/cloudflare --project-name=ai-agent-studio"
   },
   "dependencies": {
     "next": "16.1.1",
