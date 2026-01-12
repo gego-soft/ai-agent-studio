@@ -21,7 +21,10 @@ When setting up your Cloudflare Pages project, use these settings:
 
 - `npm run cf:build` - Builds Next.js and adapts for Cloudflare (use this for Pages)
 - `npm run cf:preview` - Builds + starts local dev server (for local testing only)
-- `npm run cf:deploy` - Builds + deploys via CLI (alternative to dashboard)
+- `npm run cf:deploy` - Builds + deploys via CLI (for local machine only, includes safety check)
+- `npm run cf:deploy:local` - Same as `cf:deploy` but without safety check (use if needed)
+
+**Safety Feature**: `cf:deploy` includes a check that prevents it from running in Cloudflare Pages build environment, avoiding authentication errors.
 
 ## Step-by-Step Setup
 

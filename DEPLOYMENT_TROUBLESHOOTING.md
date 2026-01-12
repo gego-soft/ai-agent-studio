@@ -9,6 +9,8 @@ If your build completes successfully but deployment fails with authentication er
 **Correct**: `npm run cf:build`  
 **Wrong**: `npm run cf:deploy` or `npm run cf:preview`
 
+**Safety Feature**: The `cf:deploy` script now includes a safety check that will prevent it from running in Cloudflare Pages build environment. If you accidentally use `cf:deploy` as your build command, it will fail early with a clear error message instead of causing authentication errors.
+
 ### 2. Verify Output Directory
 
 In Cloudflare Pages dashboard:

@@ -50,10 +50,11 @@ This starts a local Wrangler Pages dev server to preview your Cloudflare-optimiz
 
 #### Deploy to Cloudflare
 
-**Option A: Using CLI**
+**Option A: Using CLI (from your local machine)**
 ```bash
 npm run cf:deploy
 ```
+⚠️ **Note**: This will fail if run in Cloudflare Pages build environment. Use `cf:build` for dashboard deployments.
 
 **Option B: Using Cloudflare Dashboard (Recommended)**
 
@@ -72,7 +73,7 @@ npm run cf:deploy
 - Use ONLY `npm run cf:build` as your build command in Cloudflare Pages dashboard
 - DO NOT use `npm run cf:deploy` or `npm run cf:preview` as the build command
 - Cloudflare Pages automatically deploys the output - you don't need to run `wrangler pages deploy` manually
-- `cf:deploy` is only for CLI deployments from your local machine
+- `cf:deploy` is only for CLI deployments from your local machine and will fail if accidentally used in Cloudflare Pages build environment
 
 ## Project Structure
 
