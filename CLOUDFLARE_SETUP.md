@@ -42,7 +42,11 @@ When setting up your Cloudflare Pages project, use these settings:
    Project name: ai-agent-studio (or your preferred name)
    ```
 
-   **Note**: The `wrangler.toml` file now includes `pages_build_output_dir` which Cloudflare Pages will automatically detect.
+   **⚠️ CRITICAL**: 
+   - Use ONLY `npm run cf:build` as the build command
+   - DO NOT use `npm run cf:deploy` or `npm run cf:preview` as the build command
+   - Cloudflare Pages will automatically deploy the output - no need for `wrangler pages deploy`
+   - The `wrangler.toml` file includes `pages_build_output_dir` which Cloudflare Pages will automatically detect
 
 4. **Environment Variables** (if needed)
    - Go to Settings → Environment Variables
@@ -53,6 +57,15 @@ When setting up your Cloudflare Pages project, use these settings:
    - Wait for the build to complete
 
 ## Troubleshooting
+
+### Authentication Error [code: 10000] - "A request to the Cloudflare API failed"
+
+**Problem**: You're using `cf:deploy` or `cf:preview` as the build command, which tries to run `wrangler pages deploy` from within Cloudflare's build environment.
+
+**Solution**: 
+- ⚠️ **CRITICAL**: Use ONLY `npm run cf:build` as your build command in Cloudflare Pages dashboard
+- Cloudflare Pages automatically deploys the output - you don't need to run `wrangler pages deploy` manually
+- `cf:deploy` is only for CLI deployments from your local machine, not for Cloudflare Pages builds
 
 ### Build Fails with "Missing entry-point"
 

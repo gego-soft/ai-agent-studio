@@ -3,4 +3,8 @@ compatibility_date = "2024-01-15"
 compatibility_flags = ["nodejs_compat"]
 
 # Cloudflare Pages configuration
+# This tells Cloudflare Pages where to find the build output
 pages_build_output_dir = ".open-next/cloudflare"
+
+# Note: Cloudflare Pages will automatically deploy the contents of pages_build_output_dir
+# No need to run wrangler pages deploy manually when deploying via dashboard

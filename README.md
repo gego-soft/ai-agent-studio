@@ -68,7 +68,11 @@ npm run cf:deploy
    - **Root directory**: `/` (leave empty or use `/`)
 6. Click **Save and Deploy**
 
-**Important**: Do NOT use `cf:preview` as your build command in Cloudflare Pages. Use `cf:build` only.
+**⚠️ CRITICAL**: 
+- Use ONLY `npm run cf:build` as your build command in Cloudflare Pages dashboard
+- DO NOT use `npm run cf:deploy` or `npm run cf:preview` as the build command
+- Cloudflare Pages automatically deploys the output - you don't need to run `wrangler pages deploy` manually
+- `cf:deploy` is only for CLI deployments from your local machine
 
 ## Project Structure
 
